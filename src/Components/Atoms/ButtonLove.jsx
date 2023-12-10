@@ -7,10 +7,10 @@ import { useSelector } from "react-redux";
 
 const ButtonLove = ({ id }) => {
   const [isSolid, setIsSolid] = useState(false);
-  const savedStatus = useSelector((state) => state.saved.savedStatus);
+  const savedStatus = useSelector((state) => state?.saved?.savedStatus);
 
   useEffect(() => {
-    setIsSolid(savedStatus.some((item) => item.item.id === id));
+    setIsSolid(savedStatus?.some((item) => item?.item.id === id));
   }, [savedStatus, id]);
 
   const toggleIcon = async () => {
